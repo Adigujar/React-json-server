@@ -23,7 +23,7 @@ const Query = () => {
   const submitQuery = () => {
     let obj = { QueryName, description, id: Query[Query.length - 1]['id'] + 1, status };
     
-    fetch(`http://localhost:3000/Query/`, {
+    fetch(`https://reactjson-server.herokuapp.com/Query/`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -40,7 +40,7 @@ const Query = () => {
   };
   const editQuery = (obj, id) => {
     setShow(0);
-    fetch(`http://localhost:3000/Query//${id}`, {
+    fetch(`https://reactjson-server.herokuapp.com/Query//${id}`, {
       method: 'PUT',
       headers: {
         Accept: 'application/json',
@@ -55,7 +55,7 @@ const Query = () => {
   };
 
   const deleteQuery = (id) => {
-    fetch(`http://localhost:3000/Query//${id}`, {
+    fetch(`https://reactjson-server.herokuapp.com/Query//${id}`, {
       method: 'DELETE',
     })
       .then((res) => res.json())
